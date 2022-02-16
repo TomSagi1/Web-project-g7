@@ -1,0 +1,20 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+#body {
+    text-align: center;
+}
+
+.tab {
+    tab-size: 8;
+}
+
+@media only screen and (max-width: 800px) {
+    *{
+        display: block;
+    	padding: 25px;
+        margin-block: 15px;    	
+    }
+}

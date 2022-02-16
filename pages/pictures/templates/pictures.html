@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Pictures' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('pictures.static', filename='css/pictures.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+    <div id='body'>
+	    <h2>Photos</h2>
+        <br><br>
+
+	    <pre class="tab"><img src="{{ url_for('pictures.static',filename='/media/style1.jpg') }}" alt="style1">        <img src="{{ url_for('pictures.static',filename='/media/style2.jpg') }}" alt="style2">        <img src="{{ url_for('pictures.static',filename='/media/style3.jpg') }}" alt="style3"></pre>
+	    <br>
+	    <pre class="tab"><img src="{{ url_for('pictures.static',filename='/media/style4.jpg') }}" alt="style4">        <img src="{{ url_for('pictures.static',filename='/media/style5.jpg') }}" alt="style5">        <img src="{{ url_for('pictures.static',filename='/media/style6.jpg') }}" alt="style6"></pre>
+    </div>
+{% endblock %}
