@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Register' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('register.static', filename='css/register.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <script src="{{ url_for('register.static', filename='js/register.js') }}"></script>
+    {% if error %}
+        <p class="error"> <b>{{ error }} </b></p>
+    {% endif %}
+    {% if success %}
+        <p class="success"> <b>{{ success }} </b></p>
+    {% endif %}
+    <form method="POST" action="/registrate_user">
+    <div class="container">
+        <h2>Register</h2>
+            <strong>Fill out the details below in order to register<br></strong><br>
+            <label for="first_name">First name:</label>
+            <input id = "first_name" type="text" name="first_name" class="box" size="30"> <br><br>
+            <label for="last_name">Last name:</label>
+            <input id = "last_name" type="text" name="last_name" class="box" size="30"><br><br>
+            <label for="phone">Phone:</label>
+            <input id = "phone" type="text"  name="phone" class="box" pattern="05[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" oninvalid="alert('אנא הזן מספר נייד תקין ********05');" required>
+            <label for="email">Email:</label>
+            <input id = "email" type="email"  name="email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            <button type="button" onclick="validateEmail()">Verify email</button><br>
+            <p id="email_validation"></p>
+            <label for="psw">Password:</label>
+            <input id = "psw" type="password"  name="psw" class="box" size="30" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}"
+            oninvalid="alert('הסיסמה צריכה להכיל לפחות אות גדולה ואות קטנה באנגלית, ספרה ולפחות 4 תווים ');"><br><br>
+            <button type="submit"  class="float-left submit-button" >Submit</button>
+        </div>
+        <br><br>
+        </form>
+
+    </div>
+{% endblock %}
