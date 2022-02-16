@@ -1,0 +1,101 @@
+.container{
+  text-align: center;
+  font-family: varela;
+}
+
+.grid { 
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(15, 1fr);
+    margin: 40px;
+    grid-auto-rows: min-content;
+}
+
+@keyframes changecolor {
+    from{background-color: rgb(150, 229, 217);}
+    to{background-color: rgb(150, 240, 20);}
+}
+
+#review1{
+    background-color: rgb(150, 229, 217);
+    animation-name: changecolor;
+    animation-duration: 3s;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 20px 20px rgba(80, 70, 45, 0.801);
+    margin-block: 10px;	
+    grid-column: 8/15;
+    grid-row: 1;
+}
+
+
+#review2{
+    background-color: rgb(150, 229, 217);
+    animation-name: changecolor;
+    animation-duration: 3s;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 20px 20px rgba(80, 70, 45, 0.801);
+    margin-block: 10px;	
+    grid-column: 1/8;
+    grid-row: 1 span;
+}
+
+
+#review3 {
+    background-color: rgb(150, 229, 217);
+    animation-name: changecolor;
+    animation-duration: 3s;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 20px 20px rgba(80, 70, 45, 0.801);
+    margin-block: 10px;	
+    grid-column: 1/8;
+    grid-row: 2 span;
+}
+
+#review4 {
+     background-color: rgb(150, 229, 217);
+    animation-name: changecolor;
+    animation-duration: 3s;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 20px 20px rgba(80, 70, 45, 0.801);
+    margin-block: 10px;	
+    grid-column: 8/15;
+    grid-row: 2 span;
+}
+
+
+#review5 {
+    background-color: rgb(150, 229, 217);
+    animation-name: changecolor;
+    animation-duration: 3s;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 20px 20px rgba(80, 70, 45, 0.801);
+    margin-block: 10px;	
+    grid-column: 1/8;
+    grid-row: 3 span;
+}
+#review6 {
+    background-color: rgb(150, 229, 217);
+    animation-name: changecolor;
+    animation-duration: 3s;
+    padding: 40px;
+    border-radius: 50px;
+    box-shadow: 20px 20px rgba(80, 70, 45, 0.801);
+    margin-block: 10px;	
+    grid-column: 8/15;
+    grid-row: 3 span;
+}
+
+@media only screen and (max-width: 800px) {
+    *{
+        display: block;
+    	padding: 25px;
+        margin-block: 15px;    	
+    }
+}
+
+

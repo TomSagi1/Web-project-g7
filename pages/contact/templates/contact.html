@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'contact' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('contact.static', filename='css/contact.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <script src="{{ url_for('contact.static', filename='js/contact.js') }}"></script>
+    {% if success %}
+        <p class="success"> <b>{{ success }} </b></p>
+    {% endif %}
+    <form action="/contact_us" method="post">
+    <div class="container">
+        <h2>Contact Us</h2>
+            <strong> Fill out the details and we'll reach out to you as soon as possible<br></strong><br>
+            <label for="firstname">First name:</label>
+            <input id = "firstname" type="text"  name="firstname" class="box" size="30" required> <br><br>
+            <label for="lastname">Last name:</label>
+            <input id = "lastname" type="text"  name="lastname" class="box" size="30" required><br><br>
+            <label for="Email">Email:</label>
+            <input id = "email" type="email"  name="email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+            <button type="button" onclick="validateEmail()">Verify email</button><br>
+            <p id="email_validation"></p>
+            <div id="message">
+                <label for="comment">Message:</label></div>
+                <textarea id="comment" name="comment" cols = "30" rows="5" class="box" required></textarea><br><br>
+                <button type="submit"  class="float-left submit-button" >Send</button>
+                <br><br>
+        </div>
+        </form>
+
+{% endblock %}

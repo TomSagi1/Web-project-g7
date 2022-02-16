@@ -1,0 +1,41 @@
+
+h1{
+    text-align: center;
+}
+ ul {
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+ li {
+    list-style: none;
+    display: inline-block;
+    width: calc(100% / 3);
+    height: 100px;
+    text-align: center;
+    direction: rtl;
+ }
+
+#product_image{
+    width: 75%;
+    padding: 10px;
+    margin: 10px;
+    border: darksalmon solid 2px;
+    border-radius: 100%;
+
+}
+
+
+.product_content{
+    padding: 5px;
+}
+
+
+@font-face{
+    font-family: varela;
+    src:url(VarelaRound-Regular.ttf)
+}

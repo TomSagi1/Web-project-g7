@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Homepage' %}
+
+{% block page_head_css %}
+        <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+    <div id='about' class="grid-item">
+            <p>
+                <h2>Welcome to Brooklyn Hair Saloon!</h2>
+                <p>The founder of the business, Lin Halevi, started her barbering career as an inexperienced 17 year old working in a ‘GVANIM’ barber shop in Rishon Letsiyon.
+                    As one of the very first women to enter into this male dominated world, Lin could clearly see a gap in the market away from the impersonal experience of a
+                    traditional barbers and the perming lotions and colourings of the unisex hairdresser. She could see that men were looking for (and continue to seek today)
+                    an enjoyable and relaxing haircut or shave, in a comfortable and friendly, yet masculine, environment. In 2021 Lin opened her first Barber Shop in Rishon
+                    Letsiyon, offering men the efficient yet enjoyable haircutting, styling and shaving experience they had been searching for.
+            </p>
+            </p>
+        <img src="{{ url_for('homepage.static',filename='/media/barbershop.jpg') }}" alt ="Logo">   <img src="{{ url_for('homepage.static',filename='/media/hairdresser.jpg') }}" alt ="hairdresser">
+        </div>
+
+    </div>
+    <br><br>
+{% endblock %}

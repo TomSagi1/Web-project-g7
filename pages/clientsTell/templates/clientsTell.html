@@ -1,0 +1,60 @@
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Clients Tell' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('clientsTell.static', filename='css/clientsTell.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="container">
+        <div class="grid">
+            <div id='review1' class="grid-item">
+                <p>
+            <strong>Orna Hazan</strong>
+		    <p>"Nothing more to say other than briliant<br>Lyn is a genuis<br>Knows exactly how to fit a hairstyle to each person"
+		    </p>
+               </p>
+            </div>
+
+            <div id='review2' class="grid-item">
+             <p>
+            <strong>Shira Cohen</strong>
+		    <p>"It's amazing in Lyn's barber shop<br>I recommend this hairdresser without a doubt"</p>
+              </p>
+            </div>
+
+
+            <div id='review3' class="grid-item">
+             <p>
+		    <strong>Miran Levi</strong>
+                 <p>"Lyn saved my life(I mean my hair's) :)"</p>
+                </p>
+            </div>
+
+            <div id='review4' class="grid-item">
+
+                <p>
+                    <strong>Adi Shkedi</strong>
+                    <p>"Great atmosphere and peaceful barber shop<br>Lyn is very proffesional"</p>
+                </p>
+            </div>
+
+
+            <div id='review5' class="grid-item">
+                <strong>Nira Shalev</strong>
+             <p>
+                "Lyn makes everyone look like a model<br>I just adore her and her work"
+             </p>
+            </div>
+
+	    <div id='review6' class="grid-item">
+                <strong>Danielle Amir</strong>
+                <p>
+                  "Lyn only<br>Enough said"
+                </p>
+        </div>
+        </div>
+    </div>
+{% endblock %}

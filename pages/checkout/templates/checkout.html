@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'checkout' %}
+
+{% block page_head_css %}
+        <link rel="stylesheet" href="{{url_for('checkout.static', filename='css/cartStyle.css')}}"/>
+            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>shopping checkout</title>
+
+
+{% endblock %}
+
+{% block page_body_main_content %}
+
+        <div class="gridContainer">
+             <div class="item1">
+                <table class = "table" >
+                    <tr>
+                      <th>quantity</th>
+                      <th>picture</th>
+                      <th>price</th>
+                      <th style="width: 30%;">product</th>
+
+                    </tr>
+
+                      <tr>
+                         {%  for product in productsInOrder %}
+                        <!-- products -->
+                        <tr class="item2">
+                            <td> {{ product.quantity }}</td>
+                            <td><img class= "picture" src="{{product.image}}" alt="product" ></td>
+                            <td  id = "price"> ₪{{product.price}}0</td>
+                            <td> {{product.product_name }} </td>
+                        </tr>
+                        {% endfor %}
+                  </table>
+
+                    <div class="total">
+                        <h1>₪{{total_price}}0 :Total price </h1>
+                    </div>
+
+                    <span class = buttons>
+                        <form method = "POST" action ="/cancelOrder">
+                            <input name = "orderID" value = "{{ productsInOrder[0].orderID }}" type="hidden">
+                            <a style="align-content: center; padding: 10px;"><button onclick="alert('Order is cancelled')">Cancel Order</button></a>
+                        </form>
+
+                        <form method = "POST" action ="/sendOrder">
+                            <input name = "orderID" value = "{{ productsInOrder[0].orderID }}" type="hidden">
+                            <a style="align-content: center; display: inline-block"><button onclick="alert('Order was received')">Finish Order </button></a>
+                        </form>
+                    </span>
+            </div>
+        </div>
+{% endblock %}
+
+
+
+

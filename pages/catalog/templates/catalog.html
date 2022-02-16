@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'catalog' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('catalog.static', filename='css/catalog.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+        <h1 id = title> Our Products </h1>
+            <ul>
+                {% for product in products %}
+                    <li>
+                    <img id = "product_image" src = "{{ product.image}}" alt = "product"><br>
+                    <span class = "product_content">
+                        {{ product.description }} <br> ₪{{ product.price }}0 <br>
+                    </span>
+                    </li>
+                {% endfor %}
+            </ul>
+            <br><br><br><br>
+
+{% endblock %}
+
+
+
+

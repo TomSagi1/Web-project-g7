@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Login' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('login.static', filename='css/login.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    {% if error %}
+    <p class="error"> Error: {{ error }} </p>
+    {% endif %}
+
+    <form action="/login_user" method="POST">
+    <div class="container">
+        {% if session.login != True %}
+        <h2>Login</h2>
+        <strong>Fill in your username and password to log in<br></strong><br>
+        <label for="email">email:</label>
+        <input id = "email" type="text"  name="email" class="box" size="30" required> <br><br>
+        <label for="password">Password:</label>
+        <input id = "psw" type="password"  name="psw" class="box" size="30" required><br><br>
+        <button type="submit"  class="float-left submit-button" >Sign in</button>
+        {% endif %}
+    </div>
+        <br><br>
+    </form>
+
+    {% if session.login == True %}
+     <h3>You are already logged in !<br>disconnect first to re-login</h3>
+    {% endif %}
+{% endblock %}

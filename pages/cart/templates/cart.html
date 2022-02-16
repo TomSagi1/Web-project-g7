@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'cart' %}
+
+{% block page_head_css %}
+     <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+    {% if error %}
+    <p class="error"> Error: {{ error }} </p>
+    {% endif %}
+
+        <div class="gridContainer">
+             <div class="item1">
+                <table class ="table">
+                    <tr>
+                      <th>Quantity</th>
+                      <th>picture</th>
+                      <th>price</th>
+                      <th style="width: 30%;">product</th>
+                    </tr>
+
+                     <form method = "POST" action ="/createOrder">
+                         {%  for product in products %}
+                        <!-- products -->
+                        <tr class="item2">
+                            <td><input name = "{{ product.productID }}" type="number" min = "0" max = "20" value="0" style="width: 100%;"></td>
+                            <td><img class= "picture" src="{{product.image}}" alt="product" ></td>
+                            <td  id = "price"> ₪{{product.price}}0</td>
+                            <td> {{product.product_name }} </td>
+
+                        </tr>
+                        {% endfor %}
+                     <a style="justify-self: center;"><button>Order</button></a>
+                     </form>
+                  </table>
+                        <br><br>
+            </div>
+        </div>
+{% endblock %}
+
+
+
+

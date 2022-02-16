@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('header.static', filename='css/header.css') }}"/>
+</head>
+<body>
+
+    <ul>
+        <li style="float:center"><a href="/homepage">ABOUT</a></li>
+        <li style="float:center"><a href="/clientsTell">WHAT CLIENTS ARE SAYING</a></li>
+        <li style="float:center"><a href="/pictures">GALLERY</a></li>
+        <li style="float:center"><a href="/contact">CONTACT US</a></li>
+        <li style="float:center"><a href="/register">Register</a></li>
+        <li style="float:center"><a href="/login">Login</a></li>
+        <li style="float:center"><a href="/catalog">Catalog</a></li>
+        <li style="float:center"><a href="/cart">Cart</a></li>
+    </ul>
+    <div id='logo'>
+        <img src="{{ url_for('header.static',filename='/media/logo.png') }}" alt ="Logo"></div><br><br>
+    <hr>
+    {% if session.login %}
+            <h3 class="user" style="float: left; padding-right: 20px;  font-size: 40px; margin-top: 1px;"> Hello {{ session.get('name') }} !</h3>
+        <form  action="/logout_user">
+         <button type="submit" class="registerbtn">Disconnect</button> <br><br>
+     </form>
+            {% else %}
+            <h3 class="user" style="display:inline; float: left; padding-right: 20px; font-size: 40px; margin-top: 1px;"> Hello Guest !</h3>
+            {% endif %}
+    <br><br><br>
+</body>
+
+</html>
